@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .formstyle{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <form action="" class="formstyle">
+        <textarea name="" id="textarea1">Have a Good Day</textarea><br>
+        <input type="text" id="searchfor"><br>
+        <input type="text" id="rep"><br>
+        <button type="button" onclick="searchforonce()">Replace once</button><br>
+        <button type="button" onclick="searchforall()">Replace all</button>
+    </form>
+    <script>
+        function searchforonce(){
+            let searchfor=document.getElementById("searchfor").value;
+            console.log(searchfor);
+
+            let replaceWith=document.getElementById("rep").value;
+            console.log(replaceWith);
+            let text=document.getElementById("textarea1").value;
+            let changedtext=text.replace(searchfor,replaceWith);
+            console.log(changedtext);
+            text="qwert";
+            document.getElementById("textarea1").value=changedtext;
+        }
+        function searchforall(){
+            let searchfor=document.getElementById("searchfor").value;
+            console.log(searchfor);
+
+            let replaceWith=document.getElementById("rep").value;
+            console.log(replaceWith);
+            let text=document.getElementById("textarea1").value;
+            let changedtext=text.replaceAll(searchfor,replaceWith);
+            console.log(changedtext);
+            document.getElementById("textarea1").value=changedtext;
+
+        }
+    </script>
+</body>
+</html>
